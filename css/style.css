@@ -1,0 +1,33 @@
+* {
+    background: c;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.grid__body {
+    /* TODO TEXT ALIGN */
+    display: grid;
+    text-align: center;
+    grid-template:
+        [start] "header header" 50px[row2]
+        [row2] "sidebar main" 1fr [row3]
+        [row3] "footer footer" [row-end]/ 500px 1fr; /*! после / указыв размер колонок*/
+}
+
+.grid__header {
+    grid-area: header;
+    border: 1px dashed gray;
+}
+.grid__sidebar {
+    grid-area: sidebar;
+    border: 1px dashed gray;
+}
+.grid__main {
+    grid-area: main;
+    border: 1px dashed gray;
+}
+.grid__footer {
+    grid-area: footer;
+    border: 1px dashed gray;
+}
