@@ -1,9 +1,11 @@
 * {
-    background: c;
+    background: #050505;
+    color: #fff;
     padding: 0;
     margin: 0;
     text-decoration: none;
     box-sizing: border-box;
+    text-decoration: none;
 }
 .grid__body {
     /* TODO TEXT ALIGN */
@@ -11,14 +13,63 @@
     text-align: center;
     grid-template:
         [start] "header header" 50px[row2]
-        [row2] "sidebar main" 1fr [row3]
-        [row3] "footer footer" [row-end]/ 500px 1fr; /*! после / указыв размер колонок*/
+        [row2] "sidebar main" [row3]
+        [row3] "footer footer" [row-end]/ 30% 1fr; /*! после / указыв размер колонок*/
 }
 
 .grid__header {
     grid-area: header;
-    border: 1px dashed gray;
+    display: flex;
+    margin: auto;
+    text-align: center;
 }
+/*TODO ПОИСК */
+.search form {
+    position: relative;
+    border: 1px dashed gray;
+    width: 300px;
+    margin: 0 30px;
+}
+.search input,
+button {
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+.search input {
+    width: 100%;
+    height: 100%;
+    background: #444;
+    padding-left: 10px;
+}
+.search button {
+    height: 15px;
+    width: 50px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #000;
+    cursor: pointer;
+}
+.search button:before {
+    content: "\f105";
+    font-family: FontAwesome;
+    color: #f9f0da;
+    font-size: 10px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+/* !NAVBAR */
+.navbar {
+    display: flex;
+}
+.navbar img {
+    border: 1px solid white;
+    padding: 1px;
+    max-width: 20px;
+    margin: 0 5px;
+}
+
 .grid__sidebar {
     grid-area: sidebar;
     border: 1px dashed gray;
@@ -27,6 +78,20 @@
     grid-area: main;
     border: 1px dashed gray;
 }
+
+/* !MANSORY */
+
+.grid__mansory {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+.grid__mansory_item {
+    text-align: center;
+    border: 1px solid white;
+    padding: 30px;
+    margin: 10px;
+}
+
 .grid__footer {
     grid-area: footer;
     border: 1px dashed gray;
